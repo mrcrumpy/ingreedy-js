@@ -422,6 +422,9 @@ Ingreedy = (function() {
 
       s0 = peg$currPos;
       s1 = peg$parseamount();
+      if (s1 === peg$FAILED) {
+        s1 = peg$c2;
+      }
       if (s1 !== peg$FAILED) {
         s2 = [];
         s3 = peg$parsews();
