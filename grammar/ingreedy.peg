@@ -1,9 +1,6 @@
 start
   = ingredient_addition
 
-ingredient_additions
-  = ingredient_addition+
-
 ingredient_addition
   = amount:amount? (ws+)? container:container? unit:unit? (ws+)? ingredient:ingredient? [\n]?  {
     var result = {
