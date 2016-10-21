@@ -1,1 +1,1 @@
-exports.Ingreedy = require('./src/parser');
+export const Ingreedy = require('./src/parser');
