@@ -1,7 +1,7 @@
 'use strict';
 
 describe("Amount parsing", function() {
-  var parser = Ingreedy;
+  var parser = require('../src/parser');
 
   it('parses integers', function() {
     var result = parser.parse('2 potatoes');

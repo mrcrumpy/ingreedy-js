@@ -19,11 +19,13 @@
     "url": "https://github.com/iancanderson/ingreedy-js/issues"
   },
   "devDependencies": {
-    "grunt": "1.0.1",
-    "grunt-contrib-jasmine": "1.0.3",
-    "grunt-contrib-watch": "1.0.0",
-    "grunt-peg": "~2.0.1",
-    "es5-shim": "^4.5.9"
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^2.4.2",
+    "gulp-peg": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "jasmine-console-reporter": "^1.2.7"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }

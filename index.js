@@ -1,3 +1,1 @@
-var Ingreedy = require('./src/parser');
-
-export Ingreedy;
+exports.Ingreedy = require('./src/parser');

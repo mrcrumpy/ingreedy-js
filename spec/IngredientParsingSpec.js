@@ -1,7 +1,7 @@
 'use strict';
 
 describe("Ingredient parsing", function() {
-  var parser = Ingreedy;
+  var parser = require('../src/parser');
 
   it('parses amountless untiless ingredients', function() {
     var result = parser.parse('potatoes');
