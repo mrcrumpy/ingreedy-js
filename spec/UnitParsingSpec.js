@@ -31,7 +31,7 @@ var unitMatchers = {
 };
 
 describe("Unit parsing", function() {
-  var parser = Ingreedy;
+  var parser = require('../src/parser');
 
   beforeEach(function() {
     jasmine.addMatchers(unitMatchers);

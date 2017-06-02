@@ -6,6 +6,7 @@ var ingreedyMatchers = {
       compare: function(inputString, expected) {
         var parserResult;
         var specResult = {};
+        var Ingreedy = require('../src/parser');
 
         try {
           parserResult = Ingreedy.parse(inputString);
@@ -30,7 +31,7 @@ var ingreedyMatchers = {
 };
 
 describe("Ingreedy", function() {
-  var parser = Ingreedy;
+  var parser = require('../src/parser');
 
   beforeEach(function() {
     jasmine.addMatchers(ingreedyMatchers);
