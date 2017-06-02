@@ -47,6 +47,16 @@ describe("Ingreedy", function() {
     });
   });
 
+  describe('german ingredient additions', function() {
+    it('parses the correct values', function() {
+      expect('400 g Mehlß').toBeParsedAs({
+        amount: '400',
+        unit: 'g',
+        ingredient: 'Mehl'
+      });
+    });
+  });
+
   describe('ingredient additions with a container', function() {
     it('parses the correct values', function() {
       expect('2 28 oz can tomatoes').toBeParsedAs({

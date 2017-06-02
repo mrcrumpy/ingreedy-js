@@ -138,6 +138,74 @@ describe("Unit parsing", function() {
     });
   });
 
+  describe('german units', function() {
+    it('parses Tassen', function() {
+      expect(parser).toParseUnit('2 Tassen flour');
+      expect(parser).toParseUnit('2 Tasse flour');
+      expect(parser).toParseUnit('2 T. flour');
+      expect(parser).toParseUnit('2 T flour');
+    });
+
+    it('parses Esslöffel', function() {
+      expect(parser).toParseUnit('2 gehäufte Esslöffel water');
+      expect(parser).toParseUnit('1 gehäufter Esslöffel water');              
+      expect(parser).toParseUnit('2 gestrichene Esslöffel water');
+      expect(parser).toParseUnit('2 gestrichene Eßlöffel water');
+      expect(parser).toParseUnit('2 gestr. Esslöffel water');
+      expect(parser).toParseUnit('2 gestr. Eßlöffel water');      
+      expect(parser).toParseUnit('2 gestr. EL water');
+      expect(parser).toParseUnit('2 gestr EL water');      
+      expect(parser).toParseUnit('2 EL water');
+      expect(parser).toParseUnit('1 Esslöffel water');
+      expect(parser).toParseUnit('1 Eßlöffel water');
+    });
+
+    it('parses Teelöffel', function() {
+      expect(parser).toParseUnit('1 gehäufter Teelöffel water');            
+      expect(parser).toParseUnit('2 gehäufte Teelöffel water');      
+      expect(parser).toParseUnit('2 gestrichene Teelöffel water');
+      expect(parser).toParseUnit('2 gestr. Teelöffel water');
+      expect(parser).toParseUnit('2 gestr. TL water');      
+      expect(parser).toParseUnit('2 Teelöffel water');
+      expect(parser).toParseUnit('1 TL water');
+    });
+
+    it('parses Pfund', function() {
+      expect(parser).toParseUnit('2 Pfunde water');
+      expect(parser).toParseUnit('1 Pfund water');
+    });
+
+    it('parses Messerspitze', function() {
+      expect(parser).toParseUnit('2 Messerspitzen water');
+      expect(parser).toParseUnit('1 Messerspitze water');
+      expect(parser).toParseUnit('1 Msp. water');
+      expect(parser).toParseUnit('1 Msp water');      
+    });
+
+    it('parses Messerspitze', function() {
+      expect(parser).toParseUnit('2 Prisen Salz');
+      expect(parser).toParseUnit('1 Prise Salz');
+      expect(parser).toParseUnit('1 Pr. Salz');
+      expect(parser).toParseUnit('1 Pr Salz');      
+    });
+
+    it('parses etwas', function() {
+      expect(parser).toParseUnit('etwas Zucker');   
+    });
+
+    it('parses Schuss', function() {
+      expect(parser).toParseUnit('2 Schuss Zucker');  
+    });
+
+    it('parses Tropfen', function() {
+      expect(parser).toParseUnit('2 Tropfen Vanille');  
+    });
+
+    it('parses Spritzer', function() {
+      expect(parser).toParseUnit('2 Spritzer Vanille');  
+    });
+  });
+
   describe('metric units', function() {
     it('parses grams', function() {
       expect(parser).toParseUnit('2 grams water');
