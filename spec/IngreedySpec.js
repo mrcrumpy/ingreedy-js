@@ -49,7 +49,7 @@ describe("Ingreedy", function() {
 
   describe('german ingredient additions', function() {
     it('parses the correct values', function() {
-      expect('400 g Mehl').toBeParsedAs({
+      expect('Mehl: 400 g').toBeParsedAs({
         amount: '400',
         unit: 'g',
         ingredient: 'Mehl'
