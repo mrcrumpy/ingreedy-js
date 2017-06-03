@@ -49,10 +49,10 @@ describe("Ingreedy", function() {
 
   describe('german ingredient additions', function() {
     it('parses the correct values', function() {
-      expect('Mehl: 400 g').toBeParsedAs({
-        amount: '400',
+      expect('schwarze Oliven (z. B. Kalamata; ohne Stein): 50 g').toBeParsedAs({
+        amount: '50',
         unit: 'g',
-        ingredient: 'Mehl'
+        ingredient: 'schwarze Oliven (z. B. Kalamata; ohne Stein)'
       });
     });
   });

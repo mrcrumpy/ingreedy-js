@@ -1,7 +1,7 @@
 {
   "name": "ingreedyjs",
   "description": "natural language parsing for recipe ingredients",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "author": {
     "name": "Daniel Crump",
     "email": "crump1991@gmail.com"
