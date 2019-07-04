@@ -17,7 +17,7 @@
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-jasmine": "^2.4.2",
+    "gulp-jasmine": "^4.0.0",
     "gulp-peg": "^0.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-webpack": "^1.5.0",
