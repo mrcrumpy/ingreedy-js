@@ -22,7 +22,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-webpack": "^1.5.0",
     "webpack": "^4.35.2",
-    "jasmine-console-reporter": "^2.0.1",
+    "jasmine-console-reporter": "^2.0.1"
   },
   "dependencies": {
     "webpack-stream": "^5.2.1"
