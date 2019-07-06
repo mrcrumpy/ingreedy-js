@@ -7,30 +7,28 @@ var reporter = require('jasmine-console-reporter');
 var webpack = require('webpack');
 var webpackStream = require('webpack-stream');
 
-gulp.task('travis', ['default']);
+function clean() {
+    return del(['src/parser.js']);
+}
 
-gulp.task('default', ['build', 'test', 'webpack']);
-
-gulp.task('build', ['clean'], function(){
-    gulp.src('grammar/ingreedy.peg')
+function build_grammar() {
+    return gulp.src('grammar/ingreedy.peg')
         .pipe(peg({format: "commonjs"}).on("error", function(error){ console.log(error)}))
         .pipe(rename('parser.js'))
         .pipe(gulp.dest('src'))
-})
+}
+var build = gulp.series(clean, build_grammar);
 
-gulp.task('clean', function(){
-    del.sync(['src/parser.js']);
-})
-
-gulp.task('test', ['build'], function(){
-    gulp.src('spec/*.js')
+function unit_test() {
+    return gulp.src('spec/*.js')
         .pipe(jasmine({
             reporter: new reporter({verbosity: true, colors: true})
         }))
-})
+}
+var test = gulp.series(build, unit_test)
 
-gulp.task('webpack', ['build', 'test'], function(){
-    gulp.src('src/parser.js')
+function webpackage() {
+    return gulp.src('src/parser.js')
         .pipe(webpackStream({
             output: {
                 filename: 'Ingreedy.js',
@@ -49,4 +47,11 @@ gulp.task('webpack', ['build', 'test'], function(){
             ]
          }))
         .pipe(gulp.dest('dist'));
-});
+}
+var webpack = gulp.series(build, test, webpackage);
+
+exports.clean = clean;
+exports.build = build;
+exports.test = test;
+exports.webpack = webpack;
+exports.default = gulp.series(build, test, webpack);
