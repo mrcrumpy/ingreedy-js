@@ -35,17 +35,8 @@ function webpackage() {
                 libraryTarget: 'var',
                 library: 'Ingreedy'
             },
-            plugins: [
-                new webpack.optimize.UglifyJsPlugin({
-                    compress: {
-                        warnings: false,
-                    },
-                    output: {
-                        comments: false,
-                    },
-                }),
-            ]
-         }))
+            mode: 'production',
+        }))
         .pipe(gulp.dest('dist'));
 }
 var webpack = gulp.series(build, test, webpackage);

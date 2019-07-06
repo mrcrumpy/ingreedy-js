@@ -11,6 +11,7 @@
     "url": "git://github.com/mrcrumpy/ingreedy-js.git"
   },
   "scripts": {
+    "start": "gulp",
     "test": "gulp test"
   },
   "main": "index.js",
