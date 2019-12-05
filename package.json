@@ -21,7 +21,7 @@
     "gulp": "^4.0.2",
     "gulp-jasmine": "^4.0.0",
     "gulp-peg": "^0.2.0",
-    "gulp-rename": "^1.2.2",
+    "gulp-rename": "^2.0.0",
     "jasmine-console-reporter": "^3.1.0",
     "webpack": "^4.35.2",
     "webpack-stream": "^5.2.1"
