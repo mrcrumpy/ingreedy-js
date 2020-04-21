@@ -23,6 +23,11 @@ describe("Amount parsing", function() {
     expect(result.amount).toBe('1 1/2');
   });
 
+  it('parses mixed numbers with conjunctions (and)', function() {
+    var result = parser.parse('1 and 1/2 potatoes');
+    expect(result.amount).toBe('1 and 1/2');
+  });
+
   it('parses decimals', function() {
     var result = parser.parse('1.5 potatoes');
     expect(result.amount).toBe('1.5');
