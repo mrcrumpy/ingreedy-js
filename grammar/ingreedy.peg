@@ -70,6 +70,7 @@ float
 
 mixed_number
   = $(integer space fraction)
+  / $(integer space "and" space fraction)
 
 fraction
   = $(integer [/] integer)
